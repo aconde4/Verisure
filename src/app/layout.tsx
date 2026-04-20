@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { IBM_Plex_Mono, Manrope } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const manrope = Manrope({
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-sans"
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono"
 });
 
 export const metadata: Metadata = {
-  title: "Verisure CX & Churn Dashboard",
-  description: "Executive dashboard for a Verisure customer experience and churn case."
+  title: "Verisure CX & Churn Analysis Dashboard",
+  description:
+    "Interactive dashboard to explore customer experience, operational friction, and cancellation patterns.",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${manrope.variable} ${ibmPlexMono.variable}`}>
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

@@ -1,36 +1,38 @@
-# Verisure CX & Churn Dashboard
+# Verisure CX & Churn Analysis Dashboard
 
-Dashboard simple en Next.js para visualizar un caso de customer experience y churn de Verisure usando datos agregados locales.
+Interactive analytical dashboard built with Next.js, TypeScript, and App Router. It is designed for Vercel deployment and works directly from a local row-level dataset in `src/data/customers.ts`.
 
-## Stack
-
-- Next.js con App Router
-- TypeScript
-- Sin backend
-- Sin base de datos
-- Sin librerías de gráficos
-
-## Ejecutar en local
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-La app quedará disponible en `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Estructura principal
+## Replace the dataset
 
-- `src/app/page.tsx`: página principal del dashboard
-- `src/data/verisureCase.ts`: dataset local
-- `src/components/*`: componentes reutilizables de UI
-- `src/lib/format.ts`: utilidades de formato
+Update `src/data/customers.ts` with an array of objects matching this shape:
 
-## Despliegue en Vercel
+```ts
+export type Customer = {
+  id: number | string;
+  recommendationNote: number;
+  alarmTriggers: number;
+  maintenances: number;
+  customerType: "Residential" | "Business";
+  onceAndDone: "YES" | "NO";
+  cancelled: "YES" | "NO";
+};
+```
 
-1. Sube este proyecto a GitHub, GitLab o Bitbucket.
-2. Importa el repositorio en [Vercel](https://vercel.com/).
-3. Vercel detectará automáticamente Next.js.
-4. Haz clic en Deploy.
+The current project already contains your Verisure CSV normalized into that format.
 
-No se requiere configuración adicional ni variables de entorno.
+## Deploy to Vercel
+
+```bash
+npm run build
+```
+
+Then import the repository into Vercel or run a standard Vercel deployment. No database, auth, or server-side data source is required.
