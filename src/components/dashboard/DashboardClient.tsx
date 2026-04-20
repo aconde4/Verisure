@@ -2,6 +2,7 @@
 
 import { startTransition } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { VerisureBrandTile } from "@/components/dashboard/VerisureBrandTile";
 import { DynamicInsights } from "@/components/dashboard/DynamicInsights";
 import { DriversSection } from "@/components/dashboard/DriversSection";
 import { FilterBar } from "@/components/dashboard/FilterBar";
@@ -79,21 +80,26 @@ export function DashboardClient({ customers }: DashboardClientProps) {
 
   return (
     <main className="mx-auto flex w-full max-w-[1500px] flex-1 flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
-      <section className="rounded-[32px] border border-white/60 bg-[linear-gradient(135deg,rgba(15,23,42,0.98),rgba(15,118,110,0.9))] px-6 py-8 text-white shadow-[0_40px_120px_-60px_rgba(15,23,42,0.8)] sm:px-8">
-        <div className="max-w-4xl space-y-4">
-          <span className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
-            Interactive case exploration
-          </span>
-          <div className="space-y-2">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              Verisure CX & Churn Analysis Dashboard
-            </h1>
-            <p className="text-lg text-white/80">Interactive case exploration</p>
+      <section className="rounded-[32px] border border-white/60 bg-[linear-gradient(135deg,#ff0a46_0%,#e40c43_54%,#c5173f_100%)] px-6 py-8 text-white shadow-[0_40px_120px_-60px_rgba(197,23,63,0.72)] sm:px-8">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-center">
+          <div className="max-w-4xl space-y-4">
+            <span className="inline-flex rounded-full border border-white/20 bg-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/90">
+              Interactive case exploration
+            </span>
+            <div className="space-y-2">
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                Verisure CX & Churn Analysis Dashboard
+              </h1>
+              <p className="text-lg text-white/80">Interactive case exploration</p>
+            </div>
+            <p className="max-w-3xl text-sm leading-7 text-white/78 sm:text-base">
+              Explore customer experience, operational friction, and cancellation patterns through dynamic filtering and
+              segment analysis. The dashboard derives every KPI and insight from row-level customer data.
+            </p>
           </div>
-          <p className="max-w-3xl text-sm leading-7 text-white/78 sm:text-base">
-            Explore customer experience, operational friction, and cancellation patterns through dynamic filtering and
-            segment analysis. The dashboard derives every KPI and insight from row-level customer data.
-          </p>
+          <div className="flex justify-start lg:justify-end">
+            <VerisureBrandTile />
+          </div>
         </div>
       </section>
 
@@ -128,7 +134,7 @@ export function DashboardClient({ customers }: DashboardClientProps) {
       )}
 
       {activeFilters ? (
-        <p className="pb-4 text-center text-sm text-slate-500">
+        <p className="pb-4 text-center text-sm text-[var(--ink-soft)]">
           URL state is enabled. Share this page and the current filter selection will persist.
         </p>
       ) : null}

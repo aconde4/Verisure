@@ -39,7 +39,7 @@ function CompositionCard({
             </div>
             <div className="h-2 rounded-full bg-slate-100">
               <div
-                className="h-2 rounded-full bg-slate-900"
+                className="h-2 rounded-full bg-[var(--accent)]"
                 style={{ width: `${Math.max(item.share * 100, 4)}%` }}
               />
             </div>

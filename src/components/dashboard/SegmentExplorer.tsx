@@ -80,8 +80,8 @@ export function SegmentExplorer({ dataByDimension }: SegmentExplorerProps) {
                 onClick={() => setGroupBy(option.value)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   option.value === groupBy
-                    ? "bg-slate-900 text-white"
-                    : "border border-slate-200 bg-white/80 text-slate-700 hover:border-slate-900"
+                    ? "bg-[var(--accent)] text-white shadow-[0_12px_30px_-18px_rgba(197,23,63,0.9)]"
+                    : "border border-rose-100 bg-white/85 text-[var(--ink-soft)] hover:border-[var(--accent)]"
                 }`}
               >
                 {option.label}
@@ -92,7 +92,7 @@ export function SegmentExplorer({ dataByDimension }: SegmentExplorerProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search segment"
-            className="h-11 rounded-2xl border border-slate-200 bg-white/90 px-4 text-sm outline-none transition focus:border-teal-600"
+            className="h-11 rounded-2xl border border-rose-100 bg-white/95 px-4 text-sm outline-none transition focus:border-[var(--accent)]"
           />
         </div>
 

@@ -23,9 +23,9 @@ type SatisfactionSectionProps = {
 };
 
 const npsColors: Record<string, string> = {
-  Detractors: "#b91c1c",
-  Passives: "#b45309",
-  Promoters: "#0f766e",
+  Detractors: "#c5173f",
+  Passives: "#ff6a86",
+  Promoters: "#ff0a46",
 };
 
 export function SatisfactionSection({
@@ -58,7 +58,7 @@ export function SatisfactionSection({
           <div className="h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={npsMetrics}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f4c8d2" />
                 <XAxis dataKey="label" tickLine={false} axisLine={false} />
                 <YAxis yAxisId="left" tickLine={false} axisLine={false} />
                 <YAxis yAxisId="right" orientation="right" tickFormatter={(value) => `${value}%`} tickLine={false} axisLine={false} />
@@ -88,7 +88,7 @@ export function SatisfactionSection({
                   ))}
                   <LabelList dataKey="customers" position="top" formatter={(value) => formatNumber(Number(value ?? 0))} />
                 </Bar>
-                <Bar yAxisId="right" dataKey={(entry: MetricRow) => entry.cancelRate * 100} name="cancelRatePct" radius={[12, 12, 0, 0]} fill="#0f172a" />
+                <Bar yAxisId="right" dataKey={(entry: MetricRow) => entry.cancelRate * 100} name="cancelRatePct" radius={[12, 12, 0, 0]} fill="#43141d" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -102,7 +102,7 @@ export function SatisfactionSection({
           <div className="h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={scoreBars}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f4c8d2" />
                 <XAxis dataKey="score" tickLine={false} axisLine={false} />
                 <YAxis tickLine={false} axisLine={false} />
                 <Tooltip
@@ -122,7 +122,7 @@ export function SatisfactionSection({
                     );
                   }}
                 />
-                <Bar dataKey="customers" fill="#0f766e" radius={[10, 10, 0, 0]} />
+                <Bar dataKey="customers" fill="#ff0a46" radius={[10, 10, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

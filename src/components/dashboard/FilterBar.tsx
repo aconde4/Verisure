@@ -31,7 +31,7 @@ function FilterSelect({ label, value, options, onChange }: FilterSelectProps) {
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-11 rounded-2xl border border-slate-200 bg-white/90 px-4 text-sm text-slate-900 outline-none transition focus:border-teal-600"
+        className="h-11 rounded-2xl border border-rose-100 bg-white/95 px-4 text-sm text-[var(--ink-strong)] outline-none transition focus:border-[var(--accent)]"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
@@ -55,13 +55,13 @@ export function FilterBar({ filters, filteredCount, totalCount, onChange, onRese
             </p>
           </div>
           <div className="flex items-center gap-3">
-            <span className="rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white">
+            <span className="rounded-full bg-[var(--accent)] px-4 py-2 text-sm font-medium text-white shadow-[0_12px_30px_-18px_rgba(197,23,63,0.9)]">
               {filteredCount.toLocaleString("en-US")} of {totalCount.toLocaleString("en-US")} customers
             </span>
             <button
               type="button"
               onClick={onReset}
-              className="h-11 rounded-2xl border border-slate-300 px-4 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-950"
+              className="h-11 rounded-2xl border border-rose-200 px-4 text-sm font-medium text-[var(--ink-soft)] transition hover:border-[var(--accent)] hover:text-[var(--accent-strong)]"
             >
               Reset filters
             </button>

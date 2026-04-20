@@ -48,7 +48,7 @@ export function DriversSection({
           <div className="h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={alarmMetrics}>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f4c8d2" />
                 <XAxis dataKey="label" tickLine={false} axisLine={false} />
                 <YAxis tickFormatter={(value) => `${value}%`} tickLine={false} axisLine={false} />
                 <Tooltip
@@ -73,7 +73,7 @@ export function DriversSection({
                 <Bar dataKey={(entry: MetricRow) => entry.cancelRate * 100} name="cancelRatePct" radius={[12, 12, 0, 0]}>
                   {alarmMetrics.map((entry) => {
                     const isHighlight = highestBand && entry.label === highestBand.label;
-                    return <Cell key={entry.label} fill={isHighlight ? "#b91c1c" : "#0f172a"} />;
+                    return <Cell key={entry.label} fill={isHighlight ? "#c5173f" : "#ff6a86"} />;
                   })}
                   <LabelList dataKey={(entry: MetricRow) => `${formatPercent(entry.cancelRate, 0)}`} position="top" formatter={(value) => String(value ?? "")} />
                 </Bar>
